@@ -3,11 +3,10 @@ import { Layout } from "src/component/layout/Layout";
 import { client } from "src/lib/client";
 
 type Props = {
-  title: string;
   body: string;
 };
 
-const About: NextPage<Props> = ({ title, body }) => {
+const About: NextPage<Props> = ({ body }) => {
   return (
     <Layout>
       <div

@@ -6,14 +6,12 @@ export const DrawerList = () => {
       <ul>
         <Link href="/">
           <a>
-            <li className="py-2 pl-3 hover:bg-gray-100" tabIndex={0}>
-              ホーム
-            </li>
+            <li className="z-50 py-2 pl-3 hover:bg-gray-100">ホーム</li>
           </a>
         </Link>
         <Link href="/about">
           <a>
-            <li className="py-2 pl-3 hover:bg-gray-100" tabIndex={1}>
+            <li className="z-50 py-2 pl-3 hover:bg-gray-100">
               このブログについて
             </li>
           </a>
