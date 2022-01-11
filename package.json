@@ -15,9 +15,18 @@
     "fix:prettier": "yarn lint:prettier --write"
   },
   "dependencies": {
-    "next": "^12.0.7",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@headlessui/react": "^1.4.2",
+    "cheerio": "^1.0.0-rc.10",
+    "dayjs": "^1.10.7",
+    "highlight.js": "^11.4.0",
+    "jotai": "^1.5.0",
+    "microcms-js-sdk": "^2.0.0",
+    "next": "^12.0.8-canary.20",
+    "next-pwa": "^5.4.4",
+    "react": "^18.0.0-rc.0",
+    "react-dom": "^18.0.0-rc.0",
+    "react-icons": "^4.3.1",
+    "react-query": "^3.34.7"
   },
   "devDependencies": {
     "@types/node": "^16.11.6",
@@ -28,7 +37,7 @@
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-tailwindcss": "^1.17.0",
+    "eslint-plugin-tailwindcss": "^3.1.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.4",
     "prettier": "^2.4.1",

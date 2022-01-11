@@ -6,6 +6,7 @@ const config = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+    domains: ["images.microcms-assets.io"],
   },
 };
 
