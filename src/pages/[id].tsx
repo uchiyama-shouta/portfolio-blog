@@ -9,28 +9,32 @@ import cheerio from "cheerio";
 import hljs from "highlight.js";
 import "highlight.js/styles/hybrid.css";
 
-const Post: NextPage<{ data: postType }> = (props) => {
-  const { thumbnail } = props.data;
+type Props = {
+  data: postType;
+  body: string;
+  thumbnail: {
+    url: string;
+    height?: number | undefined;
+    width?: number | undefined;
+  };
+};
+
+const Post: NextPage<Props> = ({ data, body, thumbnail }) => {
   return (
     <Layout>
-      {thumbnail ? (
-        <div className="mx-auto w-64 h-52 sm:m-0 sm:w-[700px] sm:h-[300px]">
-          <Image
-            src={thumbnail.url}
-            width={700}
-            height={300}
-            alt="サムネイル画像"
-          />
-        </div>
-      ) : (
-        <div className="w-64 h-52 bg-gray-400 sm:w-[700px] sm:h-[300px]" />
-      )}
-
+      <div className="mx-auto w-64 h-52 sm:m-0 sm:w-[700px] sm:h-[300px]">
+        <Image
+          src={thumbnail?.url as string}
+          width={700}
+          height={300}
+          alt="サムネイル画像"
+        />
+      </div>
       <div
         id="blog-post-body"
         className="my-16"
         dangerouslySetInnerHTML={{
-          __html: props.data.body,
+          __html: body,
         }}
       ></div>
     </Layout>
@@ -46,6 +50,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     endpoint: `blog/${id}`,
   });
 
+  const thumbnail = data.thumbnail
+    ? data.thumbnail
+    : { url: "/image/default.jpeg", width: 750, height: 422 };
+
   const $ = cheerio.load(data.body);
   $("pre code").each((_, elm) => {
     const result = hljs.highlightAuto($(elm).text());
@@ -53,11 +61,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     $(elm).addClass("hljs");
   });
 
-  data.body = $.html();
-
   return {
     props: {
       data,
+      body: $.html(),
+      thumbnail: thumbnail,
     },
   };
 };

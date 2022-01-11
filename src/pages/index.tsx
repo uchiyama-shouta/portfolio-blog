@@ -23,6 +23,9 @@ export const getStaticProps: GetStaticProps = async () => {
   const data: postList = await client.get({ endpoint: "blog" });
   data.contents.forEach((data) => {
     data.updatedAt = dayjs(data.updatedAt).format("YYYY/MM/DD");
+    data.thumbnail = data.thumbnail
+      ? data.thumbnail
+      : { url: "/image/default.jpeg", width: 750, height: 422 };
   });
 
   return {
