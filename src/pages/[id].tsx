@@ -67,6 +67,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       body: $.html(),
       thumbnail: thumbnail,
     },
+    revalidate: 600,
   };
 };
 export const getStaticPaths: GetStaticPaths = async () => {
