@@ -14,8 +14,8 @@ export const ArticleItem: VFC<Props> = (props) => {
         <Image
           className="absolute inset-0"
           src={thumbnailPath}
-          width={330}
-          height={185}
+          width={300}
+          height={180}
           alt="サムネイル"
         />
       </div>

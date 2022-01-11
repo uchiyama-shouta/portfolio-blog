@@ -33,7 +33,7 @@ export const Drawer: VFC<Props> = ({ children }) => {
           leaveFrom="translate-x-0"
           leaveTo="-translate-x-full"
         >
-          <div className="flex-1 min-w-0 max-w-xs bg-white">{children}</div>
+          <div className="flex-1 min-w-0 max-w-[250px] bg-white">{children}</div>
         </Transition.Child>
       </Dialog>
     </Transition>

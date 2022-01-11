@@ -19,7 +19,7 @@ type Props = {
   };
 };
 
-const Post: NextPage<Props> = ({ data, body, thumbnail }) => {
+const Post: NextPage<Props> = ({ body, thumbnail }) => {
   return (
     <Layout>
       <div className="mx-auto w-64 h-52 sm:m-0 sm:w-[700px] sm:h-[300px]">
